@@ -1,0 +1,193 @@
+html, body, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 0;
+  margin: 0;
+  font-style: italic;
+  color: #504f4f;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background: url(../img/noisy_grid.png);
+  background-color: #F0F8FF;
+}
+
+hr {
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 900;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+a {
+  color: #146185;
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -ms-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+  -webkit-transition: color 0.3s ease;
+  -moz-transition: color 0.3s ease;
+  -ms-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0080BC;
+}
+
+.rotate {
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+}
+
+.reverse-rotate {
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+}
+
+.jumbo {
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1.2em;
+}
+
+.about {
+  padding-bottom: 100px;
+}
+
+.awesome {
+  color: #0080BC;
+  position: relative;
+  text-shadow: 0px 2px 1px #bbbaba;
+}
+
+.jumbo-right p {
+  text-align: center;
+  margin-top: -100px;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.circle {
+  border-radius: 50%;
+  max-height: 200px;
+  max-width: 200px;
+  border: 5px solid #bbbaba;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation {
+  text-transform: uppercase;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation > li {
+  display: none;
+}
+
+.navigation > li > span > a:hover {
+  background-color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-left {
+  float: left;
+  text-align: left;
+}
+
+.footer-right {
+  float: right;
+  text-align: right;
+}
+
+.social > span > a {
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #6a737b;
+}
+
+#social-twitter > a:hover {
+  color: #4099FF;
+}
+#social-facebook > a:hover {
+  color: #3B5998;
+}
+#social-linkedin > a:hover {
+  color: #007bb6;
+}
+#social-gplus > a:hover {
+  color: #C63D2D;
+}
+#social-github > a:hover {
+  color: #171515;
+}
+#social-email > a:hover {
+  color: #4285f4;
+}
+
+@media only screen and (min-width: 350px) {
+  .jumbo {
+    font-size: 3em;
+  }
+  .footer-left {
+    float: center;
+    text-align: center;
+  }
+  .footer-right {
+    float: center;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .jumbo {
+    font-size: 4em;
+  }
+  .footer-left {
+    float: left;
+    text-align: left;
+  }
+
+  .footer-right {
+    float: right;
+    text-align: right;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .jumbo {
+    font-size: 5em;
+  }
+  .jumbo-left {
+    float: left;
+    width:57%;
+  }
+  .jumbo-right {
+    float: right;
+    width:38%;
+  }
+  .footer-left {
+    float: left;
+    text-align: left;
+  }
+
+  .footer-right {
+    float: right;
+    text-align: right;
+  }
+}
