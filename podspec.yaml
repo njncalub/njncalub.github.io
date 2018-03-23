@@ -26,4 +26,4 @@ preprocessors:
 deployments:
   default:
     destination: local
-    out_dir: docs/
+    out_dir: ./
