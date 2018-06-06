@@ -1,0 +1,262 @@
+<!doctype html>
+
+<html lang="en-us">
+
+<head>
+  <title>Nap Labs</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The HTML5 Herald" />
+  <meta name="author" content="Nap Joseph Calub" />
+  <meta name="generator" content="Hugo 0.41" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  <link rel="stylesheet" type="text/css" href="https://njncalub.github.io/css/styles.css" />
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://njncalub.github.io/">Nap Labs</a>
+            </h1>
+
+      <ul id="social-media">
+         
+        <li><a href="https://www.linkedin.com/in/njncalub"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://github.com/njncalub"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://gitlab.com/njncalub"><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i></a></li>
+          
+      </ul>
+      
+      <p><em>Where Nap tinkers with open source projects and learns about new things.</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://njncalub.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://njncalub.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>Cleaning your Python dev environment</h1>
+
+    
+
+    
+
+<p>Is your development environment getting too cluttered? Time for some spring cleaning!</p>
+
+<h2 id="first-step-uninstall-everything">First step: Uninstall everything</h2>
+
+<p>Uninstall packages depending on Homebrew&rsquo;s Python. For example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew uninstall --force httpie
+$ brew uninstall --force pyenv-virtualenv
+$ brew uninstall --force pyenv-virtualenvwrapper
+$ brew uninstall --force pyenv
+$ brew uninstall --force pipenv
+$ brew uninstall --force mongodb</code></pre></div>
+<p>Uninstall all Python versions installed via Homebrew:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew uninstall --force python2
+$ brew uninstall --force python3</code></pre></div>
+<p>Uninstall pip packages:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ pip freeze | xargs pip uninstall -y</code></pre></div>
+<p>We recommend running the commands multiple times to ensure everything was uninstalled successfully. Don&rsquo;t forget to run <code>source ~/.bash_profile</code> again after uninstalling or restart your shell session.</p>
+
+<p>Uninstall pip:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ python -m pip uninstall pip setuptools</code></pre></div>
+<p>Sanity check, this should show your system&rsquo;s default python:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ python --version  # Python <span style="color:#ae81ff">2</span>.7.10 <span style="color:#66d9ef">for</span> macOS High Sierra</code></pre></div>
+<p>Remove artifacts from the previous installs:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ rm -r ~/.conda
+$ rm -r ~/.continuum
+$ rm -r ~/.jupyter
+$ rm -r ~/.matplotlib
+$ rm -r ~/.pyenv
+$ rm -r ~/.local/venvs
+$ rm -r ~/.virtualenvs</code></pre></div>
+<h3 id="other-packages">Other packages</h3>
+
+<p>You may also want to check if there are other site-packages installed in your system. Only delete what you need:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mdfind kind:folder <span style="color:#e6db74">&#34;site-packages&#34;</span></code></pre></div>
+<p>Restart your terminal session (for good measure) before continuing.</p>
+
+<h2 id="what-we-want-to-install">What we want to install</h2>
+
+<ul>
+<li><a href="https://brew.sh/">homebrew</a></li>
+<li><a href="https://github.com/pyenv/pyenv">pyenv</a></li>
+<li><a href="https://github.com/pyenv/pyenv-virtualenv">pyenv-virtualenv</a></li>
+<li><a href="https://github.com/pypa/pipenv">pipenv</a></li>
+</ul>
+
+<h2 id="clean-install">Clean Install</h2>
+
+<h3 id="install-the-gcc-compiler-from-xcode">install the gcc compiler from xcode</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ xcode-select --install</code></pre></div>
+<h3 id="install-homebrew">install homebrew</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ /usr/bin/ruby -e <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+$ brew update</code></pre></div>
+<h3 id="install-python-2-and-3-from-homebrew">install python 2 and 3 from homebrew</h3>
+
+<p>This should install <code>python2</code>, <code>pip2</code>, <code>python3</code>, and <code>pip3</code>. The homebrew version uses the updated versions of openssl, readline, etc.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew install python@2  <span style="color:#75715e"># the latest 2.Y release
+</span><span style="color:#75715e"></span>$ brew install python3   # the latest <span style="color:#ae81ff">3</span>.Y release</code></pre></div>
+<p>You should have something like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ls -liash <span style="color:#66d9ef">$(</span>which python2<span style="color:#66d9ef">)</span>  <span style="color:#75715e"># from homebrew&#39;s python2
+</span><span style="color:#75715e"></span>$ ls -liash <span style="color:#66d9ef">$(</span>which python3<span style="color:#66d9ef">)</span>  <span style="color:#75715e"># from homebrew&#39;s python3
+</span><span style="color:#75715e"></span>$ pip2 --version              <span style="color:#75715e"># from homebrew&#39;s python2
+</span><span style="color:#75715e"></span>$ pip3 --version              # from homebrew<span style="color:#960050;background-color:#1e0010">&#39;</span>s python3</code></pre></div>
+<p>Homebrew uses the following directory structure for installing site-packages. Using <code>pip2</code> or <code>pip3</code> will install the packages here:</p>
+
+<ul>
+<li><code>/usr/local/lib/python&lt;X.Y&gt;/site-packages</code></li>
+</ul>
+
+<h3 id="install-pipenv">install pipenv</h3>
+
+<p>Install <code>pipenv</code> using homebrew&rsquo;s pip3:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ pip3 install --user pipenv</code></pre></div>
+<p>This should make <code>pipenv</code> available user-wide, and will be using homebrew&rsquo;s python3 by default.</p>
+
+<h3 id="install-pyenv-and-pyenv-virtualenv">install pyenv and pyenv-virtualenv</h3>
+
+<p>We can then install <code>pyenv</code> and <code>pyenv-virtualenv</code>, to create virtualenvs with specific versions of python.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew update
+$ brew install pyenv
+$ brew install pyenv-virtualenv</code></pre></div>
+<p>Add the following to your <code>.bash_profile</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># pyenv
+</span><span style="color:#75715e"></span>export PYENV_ROOT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.pyenv&#34;</span>
+export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$PYENV_ROOT<span style="color:#e6db74">/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">if</span> command -v pyenv <span style="color:#ae81ff">1</span>&gt;/dev/null <span style="color:#ae81ff">2</span>&gt;&amp;<span style="color:#ae81ff">1</span>; <span style="color:#66d9ef">then</span>
+  eval <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pyenv init -<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">fi</span>
+<span style="color:#66d9ef">if</span> which pyenv-virtualenv-init &gt; /dev/null; <span style="color:#66d9ef">then</span>
+  eval <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pyenv virtualenv-init -<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">fi</span></code></pre></div>
+<p>Install the latest Python versions and set the global version:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ pyenv install --list
+$ pyenv install <span style="color:#ae81ff">2</span>.7.15
+$ pyenv install <span style="color:#ae81ff">3</span>.6.5
+$ pyenv global system</code></pre></div>
+<p><em>Note</em>: Setting <code>pyenv global</code> to a different version will change the output of <code>which python</code>, which can be confusing at times. We recommend using <code>pyenv local &lt;version&gt;</code> on specific project directories and use <code>python2</code> or <code>python3</code> to be more explicit on what versions you want.</p>
+
+<p><em>Note 2</em>: When using <code>pipenv run python</code> it will be using the python in your virtualenv, and not the system or global python. This also applies to <code>pip</code>, <code>python3</code>, etc. Basically the <env>/bin executables take priority.</p>
+
+<h2 id="sample-bash-profile">Sample <code>.bash_profile</code></h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/bin/env bash
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># explicitly set the standard localization format
+</span><span style="color:#75715e"></span>export LC_ALL<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;en_US.UTF-8&#39;</span>
+export LANG<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;en_US.UTF-8&#39;</span>
+
+
+<span style="color:#75715e"># homebrew
+</span><span style="color:#75715e"># ensure user-installed binaries take precedence
+</span><span style="color:#75715e"></span>export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/local/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
+export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/local/sbin:</span>$PATH<span style="color:#e6db74">&#34;</span>
+
+
+<span style="color:#75715e"># export local executables
+</span><span style="color:#75715e"></span>export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~/.local/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
+
+<span style="color:#75715e"># add homebrew&#39;s python 3 user executables to PATH
+</span><span style="color:#75715e"></span>export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~/Library/Python/3.6/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
+
+
+<span style="color:#75715e"># pyenv and pyenv-virtualenv
+</span><span style="color:#75715e"></span>export PYENV_ROOT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.pyenv&#34;</span>
+export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$PYENV_ROOT<span style="color:#e6db74">/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">if</span> command -v pyenv <span style="color:#ae81ff">1</span>&gt;/dev/null <span style="color:#ae81ff">2</span>&gt;&amp;<span style="color:#ae81ff">1</span>; <span style="color:#66d9ef">then</span>
+  eval <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pyenv init -<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">fi</span>
+<span style="color:#66d9ef">if</span> which pyenv-virtualenv-init &gt; /dev/null; <span style="color:#66d9ef">then</span>
+  eval <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pyenv virtualenv-init -<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">fi</span>
+
+
+<span style="color:#75715e"># pipenv
+</span><span style="color:#75715e"></span>eval <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pipenv --completion<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">if</span> command -v pipenv <span style="color:#ae81ff">1</span>&gt;/dev/null <span style="color:#ae81ff">2</span>&gt;&amp;<span style="color:#ae81ff">1</span>; <span style="color:#66d9ef">then</span>
+  eval <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pipenv --completion<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">fi</span>
+
+
+<span style="color:#75715e"># other useful stuff
+</span><span style="color:#75715e"></span>gpip2<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+   PIP_REQUIRE_VIRTUALENV<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> pip2 <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>
+<span style="color:#f92672">}</span>
+gpip3<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+   PIP_REQUIRE_VIRTUALENV<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> pip3 <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>
+<span style="color:#f92672">}</span>
+alias perp<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pipenv run python&#34;</span>
+alias pyclean<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;find . -name &#39;*.py[c|o]&#39; -o -name __pycache__ -exec rm -rf {} +&#34;</span></code></pre></div>
+<h2 id="sample-pip-conf">Sample pip.conf</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir -p ~/Library/Application<span style="color:#ae81ff">\ </span>Support/pip/
+$ vim ~/Library/Application<span style="color:#ae81ff">\ </span>Support/pip/pip.conf</code></pre></div>
+<p>Add the following to restrict installing to the global pip packages</p>
+
+<pre><code>[install]
+require-virtualenv = true
+
+[uninstall]
+require-virtualenv = true
+</code></pre>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+<li><a href="https://gist.github.com/adamscharf/85a363f0bab254db00ccb3ea9ee45c72">https://gist.github.com/adamscharf/85a363f0bab254db00ccb3ea9ee45c72</a></li>
+<li><a href="https://gist.github.com/beck/a79d54f5bda49b0766a43366c603bf5d">https://gist.github.com/beck/a79d54f5bda49b0766a43366c603bf5d</a></li>
+<li><a href="https://jacobian.org/writing/python-environment-2018/">https://jacobian.org/writing/python-environment-2018/</a></li>
+<li><a href="http://www.dougalmatthews.com/2016/Nov/12/create-an-excellent-python-dev-env/">http://www.dougalmatthews.com/2016/Nov/12/create-an-excellent-python-dev-env/</a></li>
+<li><a href="https://wilsonmar.github.io/python-install/">https://wilsonmar.github.io/python-install/</a></li>
+<li><a href="https://gist.github.com/datagrok/2199506">https://gist.github.com/datagrok/2199506</a></li>
+<li><a href="https://gist.github.com/eliangcs/43a51f5c95dd9b848ddc">https://gist.github.com/eliangcs/43a51f5c95dd9b848ddc</a></li>
+<li><a href="https://chriswarrick.com/blog/2017/07/03/setting-up-a-python-development-environment/">https://chriswarrick.com/blog/2017/07/03/setting-up-a-python-development-environment/</a></li>
+<li><a href="https://hackercodex.com/guide/python-development-environment-on-mac-osx/">https://hackercodex.com/guide/python-development-environment-on-mac-osx/</a></li>
+</ul>
+
+
+</article>
+
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright &copy; 2018 &mdash; Nap Joseph Calub | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://njncalub.github.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://njncalub.github.io/js/scripts.js"></script>
+</body>
+
+</html>
