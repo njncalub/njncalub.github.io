@@ -43,5 +43,14 @@ First step: Uninstall everything Uninstall packages depending on Homebrew&amp;rs
 $ brew uninstall --force httpie $ brew uninstall --force pyenv-virtualenv $ brew uninstall --force pyenv-virtualenvwrapper $ brew uninstall --force pyenv $ brew uninstall --force pipenv $ brew uninstall --force mongodb Uninstall all Python versions installed via Homebrew:</description>
     </item>
     
+    <item>
+      <title>Al Sweigart @ PyCon Philippines 2018</title>
+      <link>https://njncalub.github.io/posts/al-sweigart-pycon-philippines-2018/</link>
+      <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://njncalub.github.io/posts/al-sweigart-pycon-philippines-2018/</guid>
+      <description>I remember reading Al&amp;rsquo;s book when I was just starting out. It&amp;rsquo;s a beginner-friendly book and it helped me get a clearer understanding of what Python can do. Since then, I&amp;rsquo;ve been using it to get my younger cousins into programming.</description>
+    </item>
+    
   </channel>
 </rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pycon on fabri de magia</title>
+    <link>https://njncalub.github.io/tags/pycon/</link>
+    <description>Recent content in Pycon on fabri de magia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright &amp;copy; 2018 &amp;mdash; Nap Labs</copyright>
+    <lastBuildDate>Sat, 24 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://njncalub.github.io/tags/pycon/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Al Sweigart @ PyCon Philippines 2018</title>
+      <link>https://njncalub.github.io/posts/al-sweigart-pycon-philippines-2018/</link>
+      <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://njncalub.github.io/posts/al-sweigart-pycon-philippines-2018/</guid>
+      <description>I remember reading Al&amp;rsquo;s book when I was just starting out. It&amp;rsquo;s a beginner-friendly book and it helped me get a clearer understanding of what Python can do. Since then, I&amp;rsquo;ve been using it to get my younger cousins into programming.</description>
+    </item>
+    
+  </channel>
+</rss>
