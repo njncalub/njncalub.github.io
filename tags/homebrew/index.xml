@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Homebrew on fabri enim bibliothecam</title>
+    <title>Homebrew on fabri de magia</title>
     <link>https://njncalub.github.io/tags/homebrew/</link>
-    <description>Recent content in Homebrew on fabri enim bibliothecam</description>
+    <description>Recent content in Homebrew on fabri de magia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;copy; 2018 &amp;mdash; Nap Labs</copyright>
@@ -14,10 +14,10 @@
     
     <item>
       <title>Cleaning your Python dev environment</title>
-      <link>https://njncalub.github.io/posts/messy-python/</link>
+      <link>https://njncalub.github.io/posts/python-dev-environment/</link>
       <pubDate>Sun, 13 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://njncalub.github.io/posts/messy-python/</guid>
+      <guid>https://njncalub.github.io/posts/python-dev-environment/</guid>
       <description>Is your development environment getting too cluttered? Time for some spring cleaning!
 First step: Uninstall everything Uninstall packages depending on Homebrew&amp;rsquo;s Python. For example:
 $ brew uninstall --force httpie $ brew uninstall --force pyenv-virtualenv $ brew uninstall --force pyenv-virtualenvwrapper $ brew uninstall --force pyenv $ brew uninstall --force pipenv $ brew uninstall --force mongodb Uninstall all Python versions installed via Homebrew:</description>

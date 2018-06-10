@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on fabri enim bibliothecam</title>
+    <title>Home on fabri de magia</title>
     <link>https://njncalub.github.io/</link>
-    <description>Recent content in Home on fabri enim bibliothecam</description>
+    <description>Recent content in Home on fabri de magia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;copy; 2018 &amp;mdash; Nap Labs</copyright>
@@ -29,16 +29,15 @@ You can usually find him attending tech conferences, hackathons, and meetups or 
       <pubDate>Wed, 06 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://njncalub.github.io/continuous-learning/</guid>
-      <description>Continuous Learning. Because similar to healthy software projects, we must always strive to improve ourselves by learning new knowledge and skills.
-Lynda    Title Released Length Instructor Completed     Google Cloud Platform Essential Training 03/2017 3h 56m Lynn Langit Jun 04, 2018   Learning Go for Web Development 09/2016 2h 9m Larry Price May 30, 2018   Java EE: Web Services 03/2014 2h 25m Patrick Royal May 02, 2018   NLP with Python for Machine Learning Essential Training 03/2018 4h 14m Derek Jedamski May 02, 2018   Web Security: OAuth and OpenID Connect 01/2018 1h 26m Keith Casey May 02, 2018   Programming Foundations: Fuzzy Logic 04/2018 41m 50s Erin Colvin May 01, 2018   Logistics Foundations 08/2015 1h 44m Steven Brown Apr 29, 2018   Scrum: Advanced 07/2017 1h 3m Kelley O&amp;rsquo;Connell Apr 29, 2018   Designing RESTful APIs 01/2018 1h 24m Keith Casey Apr 29, 2018   Database Clinic: MongoDB 08/2017 1h 17m Kirsten Hunter Apr 20, 2018   Python: Advanced Design Patterns 02/2018 1h 24m Jungwoo Ryoo Apr 19, 2018   Agile Development Practices 08/2017 26m 29s Harrison Ferrone Apr 19, 2018   Learning Python with PyCharm 07/2017 2h 30m Bruce Van Horn Apr 17, 2018   Shopify Essential Training 03/2018 3h 39m Patrick Rauland Apr 17, 2018   Learning REST APIs 02/2018 1h 8m Morten Rand-Hendriksen Apr 14, 2018   Scrum: The Basics 03/2017 1h 2m Kelley O&amp;rsquo;Connell Apr 14, 2018   Django: 4 Building an Elearning Platform 05/2017 2h 13m Antonio Mele de Juan Dec 03, 2017   Django: 3 Building an Online Shop 05/2017 2h 45m Antonio Mele de Juan Dec 02, 2017   Django: 2 Building a Social Website 05/2017 2h 21m Antonio Mele de Juan Nov 27, 2017   Django: 1 Building a Blog 05/2017 1h 57m Antonio Mele de Juan Nov 26, 2017   Learning the Python 3 Standard Library 02/2017 2h 9m Kathryn Hodge Nov 14, 2017   Advanced Django: Web Development 09/2016 59m 54s Kevin Veroneau Nov 12, 2017   Python: Programming Efficiently 02/2017 2h 15m Michele Vallisneri Nov 08, 2017   Learning Python Generators 09/2016 44m 23s Josh McQuiston Nov 05, 2017   Get Ready for Your Coding Interview 04/2017 1h 51m YK Sugishita Nov 01, 2017   Programming Foundations: Data Structures 06/2014 2h 29m Simon Allardice Nov 01, 2017   Data Science and Analytics Career Paths and Certifications: First Steps (2016) 08/2016 54m 15s Jungwoo Ryoo Oct 27, 2017   Programming Foundations: Test-Driven Development 06/2013 1h 50m Simon Allardice Oct 26, 2017   Learning Functional Programming with JavaScript 07/2017 59m 23s Shaun Wassell Oct 12, 2017   Google Tag Manager (V2) Essential Training 02/2015 2h 4m Corey Koberg Oct 09, 2017   Learning Google Apps Script 09/2015 1h 19m Scott Simpson Oct 08, 2017    CodeSchool Note: Code School was acquired by PluralSight, and some of the original courses and course progress was lost as of June 1, 2018.</description>
+      <description>Why? Software development is an endless pursuit of knowledge. There were many significant advancements in just the past decade and the tools and languages change every year. The technologies you know today might already be obsolete tomorrow.</description>
     </item>
     
     <item>
       <title>Cleaning your Python dev environment</title>
-      <link>https://njncalub.github.io/posts/messy-python/</link>
+      <link>https://njncalub.github.io/posts/python-dev-environment/</link>
       <pubDate>Sun, 13 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://njncalub.github.io/posts/messy-python/</guid>
+      <guid>https://njncalub.github.io/posts/python-dev-environment/</guid>
       <description>Is your development environment getting too cluttered? Time for some spring cleaning!
 First step: Uninstall everything Uninstall packages depending on Homebrew&amp;rsquo;s Python. For example:
 $ brew uninstall --force httpie $ brew uninstall --force pyenv-virtualenv $ brew uninstall --force pyenv-virtualenvwrapper $ brew uninstall --force pyenv $ brew uninstall --force pipenv $ brew uninstall --force mongodb Uninstall all Python versions installed via Homebrew:</description>
