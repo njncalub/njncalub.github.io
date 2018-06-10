@@ -33,6 +33,21 @@
   </url>
   
   <url>
+    <loc>https://njncalub.github.io/posts/linchpin-review/</loc>
+    <lastmod>2015-01-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://njncalub.github.io/posts/polymer-intro/</loc>
+    <lastmod>2014-11-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://njncalub.github.io/posts/titanium-center-imageview/</loc>
+    <lastmod>2014-10-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://njncalub.github.io/categories/</loc>
     <priority>0</priority>
   </url>
@@ -40,6 +55,12 @@
   <url>
     <loc>https://njncalub.github.io/tags/environment/</loc>
     <lastmod>2018-05-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://njncalub.github.io/tags/gdg-devfest-2014/</loc>
+    <lastmod>2014-11-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -52,6 +73,24 @@
   <url>
     <loc>https://njncalub.github.io/categories/images/</loc>
     <lastmod>2018-02-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://njncalub.github.io/categories/introductions/</loc>
+    <lastmod>2014-11-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://njncalub.github.io/categories/monthly-book-reviews/</loc>
+    <lastmod>2015-01-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://njncalub.github.io/tags/polymer/</loc>
+    <lastmod>2014-11-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -74,6 +113,12 @@
   </url>
   
   <url>
+    <loc>https://njncalub.github.io/tags/seth-godin/</loc>
+    <lastmod>2015-01-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://njncalub.github.io/tags/setup/</loc>
     <lastmod>2018-05-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -82,6 +127,12 @@
   <url>
     <loc>https://njncalub.github.io/tags/</loc>
     <lastmod>2018-05-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://njncalub.github.io/tags/titanium/</loc>
+    <lastmod>2014-10-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

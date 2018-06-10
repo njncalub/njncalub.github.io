@@ -52,5 +52,33 @@ $ brew uninstall --force httpie $ brew uninstall --force pyenv-virtualenv $ brew
       <description>I remember reading Al&amp;rsquo;s book when I was just starting out. It&amp;rsquo;s a beginner-friendly book and it helped me get a clearer understanding of what Python can do. Since then, I&amp;rsquo;ve been using it to get my younger cousins into programming.</description>
     </item>
     
+    <item>
+      <title>Monthly Book Reviews: Linchpin:​ Are You Indispensable?</title>
+      <link>https://njncalub.github.io/posts/linchpin-review/</link>
+      <pubDate>Fri, 30 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://njncalub.github.io/posts/linchpin-review/</guid>
+      <description>One of my goals this year was to read at least one new (non-fictional) book a month. Let&amp;rsquo;s start 2015 with Seth Godin&amp;rsquo;s Linchpin that has been sitting in the bookshelf for a while now.</description>
+    </item>
+    
+    <item>
+      <title>Friday Training Sessions: Polymer</title>
+      <link>https://njncalub.github.io/posts/polymer-intro/</link>
+      <pubDate>Fri, 14 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://njncalub.github.io/posts/polymer-intro/</guid>
+      <description>At Ingenuity, we usually conduct training sessions to learn things that we can use in developing awesome applications. Last week, I talked about the Polymer project.
+Basically, Polymer lets you implement Google&amp;rsquo;s Material Design on your web apps.</description>
+    </item>
+    
+    <item>
+      <title>Center an ImageView inside a parent View in Titanium</title>
+      <link>https://njncalub.github.io/posts/titanium-center-imageview/</link>
+      <pubDate>Wed, 22 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://njncalub.github.io/posts/titanium-center-imageview/</guid>
+      <description>As I was beginning my journey with Titanium, one of the hurdles I faced was centering an image. I wanted something that is similar to background-size: cover; in CSS where the image will be maxed out in the parent container while still retaining the image&amp;rsquo;s aspect ratio.</description>
+    </item>
+    
   </channel>
 </rss>

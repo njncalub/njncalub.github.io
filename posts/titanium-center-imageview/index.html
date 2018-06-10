@@ -1,0 +1,273 @@
+<!doctype html>
+
+<html lang="en-us">
+
+<head>
+  <title>njncalub:~/posts/titanium-center-imageview $</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The HTML5 Herald" />
+  <meta name="author" content="Nap Joseph Calub" />
+  <meta name="generator" content="Hugo 0.41" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda|Berkshire+Swash" />
+  <link rel="stylesheet" type="text/css" href="https://njncalub.github.io/css/styles.css" />
+  <link rel="stylesheet" type="text/css" href="https://njncalub.github.io/css/main.css" />
+  <link rel="icon" type="image/png" href="https://njncalub.github.io/favicon.png" />
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+          <a href="https://njncalub.github.io/" title="the makers of magic">fabri de magia</a>
+      </h1>
+
+      <ul id="social-media">
+
+  <li><a title="Keybase" href="https://keybase.io/njncalub"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a></li>
+
+
+
+  <li><a title="LinkedIn" href="https://linkedin.com/in/njncalub"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+
+
+  <li><a title="GitHub" href="https://github.com/njncalub"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a></li>
+
+
+
+
+
+  <li><a title="Curriculum Vitae" href="https://njncalub.github.io/resume"><i class="far fa-list-alt fa-lg" aria-hidden="true"></i></a></li>
+
+
+  <li><a title="Continuous Learning" href="https://njncalub.github.io/continuous-learning"><i class="fas fa-sync-alt fa-lg" aria-hidden="true"></i></a></li>
+
+</ul>
+
+
+      
+      <p><em>a grimoire on software development &amp; design</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://njncalub.github.io/">
+                <i class="fa-li fa  fa-lg"></i><span>Home</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://njncalub.github.io/about/">
+                <i class="fa-li fa  fa-lg"></i><span>About</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>Center an ImageView inside a parent View in Titanium</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            Date:
+            <em>
+              <time class="post-date" datetime="2014-10-22T00:00:00Z">2014-10-22</time>
+            </em>
+        </li>
+
+        
+        <li>
+            Tags:
+            <em>
+                
+                    
+                    <a href="https://njncalub.github.io/tags/titanium/">#titanium</a>
+                
+            </em>
+        </li>
+        
+
+        
+        <li>
+            Categories:
+            <em>
+                
+                    
+                    <a href="https://njncalub.github.io/categories/tutorials/">Tutorials</a>
+                
+            </em>
+        </li>
+        
+
+        <li>Reading Time:
+          <em>
+            2 min
+          </em>
+        </li>
+    </ul>
+</aside>
+
+    
+
+    <p>As I was beginning my journey with <a href="http://www.appcelerator.com/titanium/">Titanium</a>, one of the hurdles I faced was centering an image. I wanted something that is similar to <code>background-size: cover;</code> in CSS where the image will be maxed out in the parent container while still retaining the image&rsquo;s aspect ratio. Since I can&rsquo;t find a built-in solution, I created one myself.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Center a Titanium.UI.ImageView inside a parent Titanium.UI.View
+</span><span style="color:#75715e"> *     similar to a `background-size: cover;` in CSS.
+</span><span style="color:#75715e"> *
+</span><span style="color:#75715e"> * Takes 3 parameters: imageRatio, parentView, and imageView
+</span><span style="color:#75715e"> *
+</span><span style="color:#75715e"> * imageRatio:
+</span><span style="color:#75715e"> *     an object with the ratio or actual dimension of the image to be placed in the ImageView.
+</span><span style="color:#75715e"> *     e.g. {width: 3, height: 2}
+</span><span style="color:#75715e"> *
+</span><span style="color:#75715e"> * parentView:
+</span><span style="color:#75715e"> *     an object that defines the container where the ImageView is placed. This sets the boundaries
+</span><span style="color:#75715e"> *     or clipping size for the ImageView. Can be a View or a simple object.
+</span><span style="color:#75715e"> *     e.g. {width: 500, height: 500}
+</span><span style="color:#75715e"> *
+</span><span style="color:#75715e"> * imageView:
+</span><span style="color:#75715e"> *     the ImageView object to be centered in a parent View.
+</span><span style="color:#75715e"> *     e.g. $.imgViewThumb
+</span><span style="color:#75715e"> *
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">centerImageView</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">imageRatio</span>, <span style="color:#a6e22e">parentView</span>, <span style="color:#a6e22e">imageView</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">h1</span>, <span style="color:#a6e22e">w1</span>, <span style="color:#a6e22e">h2</span>, <span style="color:#a6e22e">w2</span>, <span style="color:#a6e22e">x1</span>, <span style="color:#a6e22e">x2</span>;
+
+    <span style="color:#a6e22e">h1</span> <span style="color:#f92672">=</span> parseFloat(<span style="color:#a6e22e">parentView</span>.<span style="color:#a6e22e">height</span>);
+    <span style="color:#a6e22e">w1</span> <span style="color:#f92672">=</span> parseFloat(<span style="color:#a6e22e">parentView</span>.<span style="color:#a6e22e">width</span>);
+    <span style="color:#a6e22e">h2</span> <span style="color:#f92672">=</span> parseFloat(<span style="color:#a6e22e">imageView</span>.<span style="color:#a6e22e">height</span>);
+    <span style="color:#a6e22e">w2</span> <span style="color:#f92672">=</span> parseFloat(<span style="color:#a6e22e">imageView</span>.<span style="color:#a6e22e">width</span>);
+
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">imageRatio</span>.<span style="color:#a6e22e">width</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">imageRatio</span>.<span style="color:#a6e22e">height</span>) {
+        <span style="color:#a6e22e">h2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">h1</span>;
+        <span style="color:#a6e22e">w2</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">imageRatio</span>.<span style="color:#a6e22e">width</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">h2</span>) <span style="color:#960050;background-color:#1e0010">/ imageRatio.height;</span>
+    } <span style="color:#66d9ef">else</span> {
+        <span style="color:#a6e22e">w2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">w1</span>;
+        <span style="color:#a6e22e">h2</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">imageRatio</span>.<span style="color:#a6e22e">height</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">w2</span>) <span style="color:#960050;background-color:#1e0010">/ imageRatio.width;</span>
+    }
+    <span style="color:#a6e22e">x1</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>((<span style="color:#a6e22e">w2</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.5</span>) <span style="color:#f92672">-</span> (<span style="color:#a6e22e">w1</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.5</span>));
+    <span style="color:#a6e22e">x2</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>((<span style="color:#a6e22e">h2</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.5</span>) <span style="color:#f92672">-</span> (<span style="color:#a6e22e">h1</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.5</span>));
+
+    <span style="color:#a6e22e">imageView</span>.<span style="color:#a6e22e">height</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">h2</span>;
+    <span style="color:#a6e22e">imageView</span>.<span style="color:#a6e22e">width</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">w2</span>;
+    <span style="color:#a6e22e">imageView</span>.<span style="color:#a6e22e">left</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">x1</span>;
+    <span style="color:#a6e22e">imageView</span>.<span style="color:#a6e22e">top</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">x2</span>;
+};
+</code></pre></div>
+<p>The <code>centerImageView</code> function stretches the image&rsquo;s smaller side to fit the parent container, and recalculates the height and width so that it will retain it&rsquo;s aspect ratio.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">win</span>, <span style="color:#a6e22e">parentView</span>, <span style="color:#a6e22e">imageView</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">initView</span>;
+
+<span style="color:#75715e">// copy the centerImageView code here
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">initView</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+    <span style="color:#a6e22e">win</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Ti</span>.<span style="color:#a6e22e">UI</span>.<span style="color:#a6e22e">createWindow</span>({
+        <span style="color:#a6e22e">backgroundColor</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;#cccccc&#34;</span>
+    });
+    <span style="color:#a6e22e">parentView</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Ti</span>.<span style="color:#a6e22e">UI</span>.<span style="color:#a6e22e">createView</span>({
+        <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Ti</span>.<span style="color:#a6e22e">Platform</span>.<span style="color:#a6e22e">displayCaps</span>.<span style="color:#a6e22e">platformHeight</span>,
+        <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Ti</span>.<span style="color:#a6e22e">Platform</span>.<span style="color:#a6e22e">displayCaps</span>.<span style="color:#a6e22e">platformWidth</span>,
+        <span style="color:#a6e22e">borderRadius</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>
+    });
+    <span style="color:#a6e22e">imageView</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Ti</span>.<span style="color:#a6e22e">UI</span>.<span style="color:#a6e22e">createImageView</span>({
+        <span style="color:#a6e22e">image</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;/images/my_image.jpg&#34;</span>
+    });
+
+    <span style="color:#75715e">// we assume here that the image has a dimension of 600x400, therefore the ratio is 3:2.
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// then you can pass {width: 3, height: 2} or {width: 600, height: 400} as the first argument.
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// you can also call this after postlayout if you don&#39;t know the dimension of the image.
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// you can then pass the imageView itself as the first argument.
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">centerImageView</span>({
+        <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>,
+        <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>
+    }, <span style="color:#a6e22e">parentView</span>, <span style="color:#a6e22e">imageView</span>);
+
+    <span style="color:#a6e22e">parentView</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">imageView</span>);
+    <span style="color:#a6e22e">win</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">parentView</span>);
+
+    <span style="color:#a6e22e">win</span>.<span style="color:#a6e22e">open</span>();
+};
+
+<span style="color:#a6e22e">initView</span>();
+</code></pre></div>
+<p>As the saying goes, if there is a wall, we&rsquo;ll break it. If there isn&rsquo;t a path, we&rsquo;ll make one with our hands!</p>
+
+
+</article>
+
+
+
+
+  
+    <section class="comments-block">
+      <button id="show-comments" style="display: none;"><i class="fa fa-comments-o"></i> Add/View Comments</button>
+</section>
+
+<section id="disqus_thread"></section>
+
+<script>
+  (function() {
+    var disqus_config = function () {
+      this.page.url = 'https://njncalub.github.io\/posts\/titanium-center-imageview\/';
+      this.page.identifier = '\/posts\/titanium-center-imageview\/';
+      this.page.title = 'Center an ImageView inside a parent View in Titanium';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      s.src = '//njncalub-ghpages.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+
+  })();
+</script>
+
+  
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright &copy; 2018 &mdash; Nap Labs |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://njncalub.github.io/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="https://njncalub.github.io/js/scripts.js"></script>
+
+
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107992935-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-107992935-1');
+</script>
+
+
+</body>
+
+</html>

@@ -23,5 +23,14 @@ First step: Uninstall everything Uninstall packages depending on Homebrew&amp;rs
 $ brew uninstall --force httpie $ brew uninstall --force pyenv-virtualenv $ brew uninstall --force pyenv-virtualenvwrapper $ brew uninstall --force pyenv $ brew uninstall --force pipenv $ brew uninstall --force mongodb Uninstall all Python versions installed via Homebrew:</description>
     </item>
     
+    <item>
+      <title>Center an ImageView inside a parent View in Titanium</title>
+      <link>https://njncalub.github.io/posts/titanium-center-imageview/</link>
+      <pubDate>Wed, 22 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://njncalub.github.io/posts/titanium-center-imageview/</guid>
+      <description>As I was beginning my journey with Titanium, one of the hurdles I faced was centering an image. I wanted something that is similar to background-size: cover; in CSS where the image will be maxed out in the parent container while still retaining the image&amp;rsquo;s aspect ratio.</description>
+    </item>
+    
   </channel>
 </rss>
