@@ -3,8 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://njncalub.github.io/</loc>
+    <lastmod>2018-06-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://njncalub.github.io/about/</loc>
     <lastmod>2018-06-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://njncalub.github.io/posts/</loc>
+    <lastmod>2018-05-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -14,11 +24,6 @@
   
   <url>
     <loc>https://njncalub.github.io/posts/messy-python/</loc>
-    <lastmod>2018-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://njncalub.github.io/posts/</loc>
     <lastmod>2018-05-13T00:00:00+00:00</lastmod>
   </url>
   
@@ -60,12 +65,6 @@
   <url>
     <loc>https://njncalub.github.io/categories/tutorials/</loc>
     <lastmod>2018-05-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://njncalub.github.io/</loc>
-    <lastmod>2018-06-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
