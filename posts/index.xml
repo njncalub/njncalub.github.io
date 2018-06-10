@@ -33,6 +33,16 @@ $ brew uninstall --force httpie $ brew uninstall --force pyenv-virtualenv $ brew
     </item>
     
     <item>
+      <title>AlDub &#34;Paniwalaan Mo&#34; Commercial Parody by Team ‪#MyBebeLove</title>
+      <link>https://njncalub.github.io/posts/aldub-paniwalaan-mo/</link>
+      <pubDate>Mon, 28 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://njncalub.github.io/posts/aldub-paniwalaan-mo/</guid>
+      <description>Presenting &amp;ldquo;Paniwalaan Mo&amp;rdquo;, a special Marlon Store commercial by Team ‪#MyBebeLove.
+  A parody of Paniwalaan Mo, #ALDUBKoTo presented for the Ingenuity Christmas Party 2015.</description>
+    </item>
+    
+    <item>
       <title>Monthly Book Reviews: Linchpin:​ Are You Indispensable?</title>
       <link>https://njncalub.github.io/posts/linchpin-review/</link>
       <pubDate>Fri, 30 Jan 2015 00:00:00 +0000</pubDate>
@@ -58,6 +68,17 @@ Basically, Polymer lets you implement Google&amp;rsquo;s Material Design on your
       
       <guid>https://njncalub.github.io/posts/titanium-center-imageview/</guid>
       <description>As I was beginning my journey with Titanium, one of the hurdles I faced was centering an image. I wanted something that is similar to background-size: cover; in CSS where the image will be maxed out in the parent container while still retaining the image&amp;rsquo;s aspect ratio.</description>
+    </item>
+    
+    <item>
+      <title>&#34;That Girl&#34; by The Expendables</title>
+      <link>https://njncalub.github.io/posts/that-girl/</link>
+      <pubDate>Thu, 13 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://njncalub.github.io/posts/that-girl/</guid>
+      <description>Presenting our final project for our IT286 multimedia class:
+  Main Cast:
+ Katreena Clavero Nap Calub Bryan Reas Cornelio Yap, Jr. Clemarie Secuya Alex Eñeco  </description>
     </item>
     
   </channel>

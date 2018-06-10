@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;copy; 2018 &amp;mdash; Nap Labs</copyright>
-    <lastBuildDate>Sun, 13 May 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 28 Dec 2015 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://njncalub.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Christmas Party</title>
+      <link>https://njncalub.github.io/tags/christmas-party/</link>
+      <pubDate>Mon, 28 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://njncalub.github.io/tags/christmas-party/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Environment</title>
@@ -18,6 +27,15 @@
       <pubDate>Sun, 13 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://njncalub.github.io/tags/environment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Final Project</title>
+      <link>https://njncalub.github.io/tags/final-project/</link>
+      <pubDate>Thu, 13 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://njncalub.github.io/tags/final-project/</guid>
       <description></description>
     </item>
     
@@ -36,6 +54,33 @@
       <pubDate>Sun, 13 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://njncalub.github.io/tags/homebrew/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ingenuity</title>
+      <link>https://njncalub.github.io/tags/ingenuity/</link>
+      <pubDate>Mon, 28 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://njncalub.github.io/tags/ingenuity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Multimedia</title>
+      <link>https://njncalub.github.io/tags/multimedia/</link>
+      <pubDate>Thu, 13 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://njncalub.github.io/tags/multimedia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Parodies</title>
+      <link>https://njncalub.github.io/tags/parodies/</link>
+      <pubDate>Mon, 28 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://njncalub.github.io/tags/parodies/</guid>
       <description></description>
     </item>
     
@@ -99,6 +144,15 @@
       <pubDate>Wed, 22 Oct 2014 00:00:00 +0000</pubDate>
       
       <guid>https://njncalub.github.io/tags/titanium/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Voice Acting</title>
+      <link>https://njncalub.github.io/tags/voice-acting/</link>
+      <pubDate>Thu, 13 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://njncalub.github.io/tags/voice-acting/</guid>
       <description></description>
     </item>
     
